@@ -1,0 +1,121 @@
+.query {
+  margin: 0 -10px 26px;
+  @include  max-screen($breakpoint-mobile) {
+    margin-bottom: 6px;
+  }
+}
+.query--product-page {
+  position: relative;
+}
+.query--product-taxonomy {
+  @include  max-screen($breakpoint-mobile) {
+    margin-bottom: 58px;
+    &:last-child {
+      margin-bottom: 6px;
+    }
+  }
+}
+.query__content {
+  list-style: none;
+}
+.query__content-item {
+  padding: 0 10px;
+  width: 25%;
+  flex: 0 1 25%;
+  @include  max-screen($breakpoint-mobile) {
+    width: 50%;
+    flex: 0 1 50%;
+  }
+
+  #{$ie} {
+    padding: 0;
+  }
+}
+.query__article {
+  height: 252px;
+  @include  max-screen($breakpoint-mobile) {
+    height: calc(100vw - 213px);
+    min-height: 162px;
+    max-height: 300px;
+    .query--product-page & {
+      height: calc(100vw - 207px);
+      min-height: 168px;
+    }
+  }
+
+  #{$ie} {
+    padding: 0 15px;
+  }
+}
+.query__article-link {
+  display: block;
+  transition: transform $base-duration $base-animation;
+  &:hover {
+    @include min-screen($breakpoint-mobile + 1) {
+      transform: translate3d(0,-10px,0);
+    }
+  }
+}
+.query__article-eyecatch-wrapper {
+  margin-bottom: 8px;
+  position: relative;
+  border: 1px solid #edf0f3;
+  @include  max-screen($breakpoint-mobile) {
+    margin-bottom: 6px;
+  }
+}
+.query__article-tag {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  top: -16px;
+  left: -12px;
+  background-color: #ad002d;
+  color: #fff;
+  text-align: center;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  padding-top: 14px;
+  padding-left: 3px;
+  @include  max-screen($breakpoint-mobile) {
+    width: 30px;
+    height: 30px;
+    top: -11px;
+    left: -11px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding-top: 9px;
+    padding-left: 2px;
+  }
+
+  #{$windows} {
+    padding-top: 12px;
+  }
+}
+.query__article-eyecatch {
+  width: 100%;
+  height: 163px;
+  background-position: center;
+  background-size: 90% auto;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  @include  max-screen($breakpoint-mobile) {
+    height: calc(100vw - 280px);
+    min-height: 95px;
+    max-height: 235px;
+  }
+}
+.query__article-title {
+  font-family: $font-hiragino-kaku;
+  color: #001a43;
+  line-height: calc(28 / 14);
+  letter-spacing: 0.1em;
+  height: 55px;
+  @include  max-screen($breakpoint-mobile) {
+    font-size: 11px;
+    line-height: 1.8;
+    height: 40px;
+  }
+}

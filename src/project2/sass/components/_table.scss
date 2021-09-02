@@ -1,0 +1,37 @@
+.table__wrapper {
+  @include  max-screen($breakpoint-mobile) {
+    position: relative;
+  }
+}
+.table__wrapper-inner {
+  @include  max-screen($breakpoint-mobile) {
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 14px;
+    margin-bottom: 5px;
+  }
+}
+.table__clone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  @include  max-screen($breakpoint-mobile) {
+    opacity: 1;
+    visibility: visible;
+  }
+  th,
+  td {
+    visibility: hidden;
+    border-color: transparent;
+  }
+}
+.table__column-fixed {
+  box-shadow: 4px 0 0px 0px rgba(0, 0, 0, 0.2);
+  .table__clone & {
+    visibility: visible;
+    border-color: #fff;
+  }
+}

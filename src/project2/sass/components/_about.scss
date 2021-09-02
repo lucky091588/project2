@@ -1,0 +1,122 @@
+.about {
+  @include  max-screen($breakpoint-mobile) {
+    padding-top: 15px;
+  }
+}
+.about__image-wrapper {
+  margin: 0 -174.5px 50px;
+  text-align: center;
+  @include  max-screen($breakpoint-mobile) {
+    margin: 0 -45px 46px;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+.about__top-content {
+  padding: 0 60px 57px;
+  @include  max-screen($breakpoint-mobile) {
+    padding: 0 25px 57px;
+  }
+  iframe {
+    padding-top: 9px;
+    width: 100%;
+    @include  max-screen($breakpoint-mobile) {
+      height: calc(100vw - 215px);
+      padding-top: 0;
+      min-height: 160px;
+    }
+  }
+}
+.about__sub-title {
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+  .about__company & {
+    margin-bottom: 16px;
+  }
+}
+.about__bottom-content {
+  padding: 57px 0 35px;
+  position: relative;
+  @include  max-screen($breakpoint-mobile) {
+    padding: 36px 25px 35px;
+  }
+  &:before {
+    content: "";
+    width: 510px;
+    height: 510px;
+    background: url('../images/bg-bottom-about.png') no-repeat left top;
+    position: absolute;
+    top: 0;
+    left: -73px;
+    @include  max-screen($breakpoint-mobile) {
+      width: calc(100vw - 113px);
+      height: calc(100vw - 113px);
+      background-size: cover;
+      top: 13px;
+      left: 0;
+    }
+  }
+}
+.about__bottom-item {
+  flex: 1 1 50%;
+  position: relative;
+  @include  max-screen($breakpoint-mobile) {
+    flex: 1 1 100%;
+  }
+}
+.about__bottom-image {
+  height: 374px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  @include  max-screen($breakpoint-mobile) {
+    height: calc(100vw - 168px);
+    min-height: 207px;
+  }
+}
+.about__bottom-right {
+  padding-left: 61px;
+  padding-top: 82px;
+  @include  max-screen($breakpoint-mobile) {
+    padding-left: 0;
+    padding-top: 23px;
+  }
+}
+.about__company {
+  padding: 41px 60px 59px;
+  @include  max-screen($breakpoint-mobile) {
+    padding: 11px 25px 0;
+  }
+}
+.about__company-details {
+  width: 100%;
+  table-layout: fixed;
+}
+.about__company-row {
+  border-bottom: 1px solid #3d455c;
+  &:first-child {
+    border-top: 1px solid #3d455c;
+  }
+}
+.about__company-column {
+  font-family: $font-hiragino-kaku;
+  color: #001a43;
+  letter-spacing: 0.1em;
+  line-height: calc(28 / 14);
+  padding: 21px 0;
+  @include  max-screen($breakpoint-mobile) {
+    width: 54%;
+    padding: 9px 0 8px;
+    font-size: 10px;
+    vertical-align: top;
+    line-height: calc(17 / 10);
+  }
+}
+.about__company-column--label {
+  font-weight: bold;
+  width: 27%;
+  @include  max-screen($breakpoint-mobile) {
+    width: 46%;
+  }
+}

@@ -1,0 +1,60 @@
+//hide text
+.u-hidden {
+  overflow: hidden;
+  text-indent: 120%;
+  white-space: nowrap;
+}
+
+//clearfix
+.u-clear {
+  zoom: 1;
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+//Omit text on one line, and add "..."
+.u-elps {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+}
+
+//No tap highlight on a smart phone
+.u-notap {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.u-pc-inline-hidden,
+.u-pc-hidden {
+  display: none;
+}
+
+.u-sp-hidden {
+  display: block;
+}
+
+.u-sp-inline-hidden {
+  display: inline-block;
+}
+
+@include max-screen($breakpoint-mobile) {
+  .u-pc-hidden {
+    display: block;
+  }
+  .u-pc-inline-hidden {
+    display: inline-block;
+  }
+  .u-sp-inline-hidden,
+  .u-sp-hidden {
+    display: none;
+  }
+}

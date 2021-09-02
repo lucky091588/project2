@@ -1,0 +1,130 @@
+.form-steps {
+  padding: 9px 0 50px;
+  @include  max-screen($breakpoint-mobile) {
+    padding: 76px 0 35px;
+  }
+  @include  max-screen(622px) {
+    padding: 62px 0 35px;
+  }
+  @include  max-screen($breakpoint-mobile-sm) {
+    padding-top: 41px;
+  }
+}
+.form-steps__inner {
+  list-style: none;
+}
+.form-steps__item {
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(100% / 3);
+  margin-left: -4px;
+  opacity: 0.6;
+  padding-left: 124px;
+  position: relative;
+  @include  max-screen($breakpoint-mobile) {
+    padding-left: 0;
+  }
+  &:first-child {
+    margin-left: 0;
+  }
+  &:nth-child(2) {
+    @include  max-screen($breakpoint-mobile) {
+      text-align: center;
+      padding-left: 16px;
+    }
+  }
+  &:last-child {
+    @include  max-screen($breakpoint-mobile) {
+      right: -9px;
+      text-align: right;
+      top: 4px;
+      padding-right: 4px;
+    }
+  }
+  span {
+    display: block;
+  }
+  &.is-current {
+    opacity: 1;
+  }
+}
+.form-steps__order {
+  color: #001a43;
+  font-size: 32px;
+  text-transform: uppercase;
+  line-height: calc(40 / 32);
+  letter-spacing: 0.1em;
+  @include  max-screen($breakpoint-mobile) {
+    font-size: 24px;
+  }
+  .form-steps__item--two & {
+    @include  max-screen($breakpoint-mobile) {
+      width: 85px;
+      margin: 0 auto;
+      text-align: left;
+    }
+  }
+  .form-steps__item--last & {
+    @include  max-screen($breakpoint-mobile) {
+      width: 100%;
+      display: inline-block;
+      text-align: right;
+      vertical-align: top;
+    }
+  }
+}
+.form-steps__label {
+  color: #001a43;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  line-height: calc(28 / 14);
+  font-family: $font-hiragino-kaku;
+  margin-top: -10px;
+  @include  max-screen($breakpoint-mobile) {
+    font-size: 11px;
+    margin-top: -9px;
+  }
+  .form-steps__item--two & {
+    @include  max-screen($breakpoint-mobile) {
+      width: 85px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+  }
+  .form-steps__item--last & {
+    @include  max-screen($breakpoint-mobile) {
+      width: 75px;
+      display: inline-block;
+      text-align: left;
+      vertical-align: top;
+    }
+  }
+}
+.form-steps__arrow {
+  position: absolute;
+  right: -16px;
+  top: 21px;
+  @include  max-screen($breakpoint-mobile) {
+    right: 12%;
+    top: 17px;
+    font-size: 5px;
+  }
+  @include max-screen(480px) {
+    right: 5%;
+  }
+  @include max-screen($breakpoint-mobile-sm) {
+    right: 3px;
+  }
+  .form-steps__item--two & {
+    @include  max-screen($breakpoint-mobile) {
+      right: -23%;
+    }
+    @include max-screen(480px) {
+      right: -21%;
+    }
+    @include max-screen($breakpoint-mobile-sm) {
+      right: -18px;
+    }
+  }
+}

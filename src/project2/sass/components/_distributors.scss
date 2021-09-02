@@ -1,0 +1,109 @@
+.distributors {
+  padding-top: 17px;
+  position: relative;
+  @include  max-screen($breakpoint-mobile) {
+    padding-top: 21px;
+  }
+}
+.distributors__details {
+  margin-bottom: 64px;
+  @include  max-screen($breakpoint-mobile) {
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.distributors__table {
+  width: 100%;
+  table-layout: fixed;
+}
+.distributors__country-wrapper {
+  background-color: #001a43;
+  width: 100%;
+  padding: 5px 5px 1px;
+  text-align: center;
+  border-bottom: 3px solid #fff;
+  letter-spacing: 0.1em;
+  @include  max-screen($breakpoint-mobile) {
+    border: none;
+    padding: 1px 5px;
+  }
+}
+.distributors__country {
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: calc(40 / 14);
+  font-family: $font-hiragino-kaku;
+  @include  max-screen($breakpoint-mobile) {
+    font-size: 10px;
+  }
+}
+.distributors__table-head-column {
+  border-bottom: 3px solid #fff;
+  border-left: 3px solid #fff;
+  border-right: 3px solid #fff;
+  text-align: center;
+  background-color: #a1aec3;
+  color: #fff;
+  font-family: $font-hiragino-kaku;
+  line-height: calc(28 / 14);
+  letter-spacing: 0.1em;
+  width: 25%;
+  padding: 9px 5px 8px;
+  @include  max-screen($breakpoint-mobile) {
+    border-width: 1px;
+    font-size: 9px;
+    width: 100px;
+    letter-spacing: 0.04em;
+    padding: 7px 5px 5px;
+  }
+  &:first-child {
+    border-left: none;
+  }
+  &:last-child {
+    border-right: none;
+  }
+  #{$firefox} & {
+    word-wrap: break-word;
+  }
+}
+.distributors__table-body-column {
+  border-bottom: 3px solid #fff;
+  border-left: 3px solid #fff;
+  border-right: 3px solid #fff;
+  text-align: center;
+  background-color: #f5f6f8;
+  color: #001a43;
+  font-family: $font-hiragino-kaku;
+  line-height: calc(28 / 14);
+  letter-spacing: 0.1em;
+  font-weight: 300;
+  padding: 9px 5px 8px;
+  width: 25%;
+  word-break: break-word;
+  word-wrap: break-word;
+  @include  max-screen($breakpoint-mobile) {
+    border-width: 1px;
+    font-size: 9px;
+    width: 100px;
+    letter-spacing: 0.04em;
+    padding: 7px 5px 5px;
+  }
+  &:first-child {
+    border-left: none;
+  }
+  &:last-child {
+    border-right: none;
+  }
+  a {
+    color: #001a43;
+    &:hover {
+      @include min-screen($breakpoint-mobile + 1) {
+        text-decoration: underline;
+      }
+    }
+  }
+}

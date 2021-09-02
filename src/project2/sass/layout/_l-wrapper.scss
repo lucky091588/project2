@@ -1,0 +1,17 @@
+.l-wrapper {
+  @include  max-screen($breakpoint-mobile) {
+    overflow-x: hidden;
+  }
+  &.is-lock {
+    position: fixed;
+    width: 100%;
+    @include  max-screen($breakpoint-mobile) {
+      overflow-x: hidden;
+    }
+  }
+
+  #{$ie} {
+    height: 100%;
+    overflow: hidden;
+  }
+}

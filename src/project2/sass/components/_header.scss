@@ -1,0 +1,67 @@
+.header {
+  position: absolute;
+  width: 100%;
+  min-width: $site-wrapper-large + 60px;
+  top: 60px;
+  left: 0;
+  z-index: $z-max + $z-max;
+  background-color: transparent;
+  transition: padding $base-duration $base-animation;
+  @include  max-screen($breakpoint-mobile) {
+    min-width: 100%;
+    top: 40px;
+  }
+  &.is-stick {
+    top: 0;
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 0 6px 30px 0 rgba(0, 0, 0, 0.05);
+    @include  max-screen($breakpoint-mobile) {
+      position: absolute;
+      top: 40px;
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  #{$windows} {
+    min-width: $site-wrapper-large;
+  }
+}
+.header--home {
+  padding-top: 0;
+  opacity: 1;
+  top: 78px;
+  transition: opacity 2s ease-out,
+              padding 2s ease-out;
+
+  @include  max-screen($breakpoint-mobile) {
+    top: 40px;
+  }
+  .l-wrapper--home & {
+    opacity: 0;
+    padding-top: 30px;
+  }
+}
+.header__wrapper {
+  @include  max-screen($breakpoint-mobile) {
+    padding: 0 24px;
+  }
+}
+.header__pc {
+  padding: 0;
+  background-color: transparent;
+  transition: padding $base-duration $base-animation;
+  .is-stick & {
+    padding: 20px 0;
+    @include  max-screen($breakpoint-mobile) {
+      padding: 0;
+    }
+  }
+}
+.header-sp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

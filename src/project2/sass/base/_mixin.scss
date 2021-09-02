@@ -1,0 +1,171 @@
+@mixin sprite-width($sprite,$scale:1) {
+  width: nth($sprite, 5) * $scale;
+}
+
+@mixin sprite-height($sprite,$scale:1) {
+  height: nth($sprite, 6) * $scale;
+}
+
+@mixin sprite-position($sprite,$scale:1) {
+  $sprite-offset-x: nth($sprite, 3) * $scale;
+  $sprite-offset-y: nth($sprite, 4) * $scale;
+  background-position: $sprite-offset-x $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+  background-repeat: no-repeat;
+}
+
+@mixin sprite-size($sprite,$scale:1) {
+  background-size: nth($sprite, 7)*$scale nth($sprite, 8)*$scale;
+}
+
+@mixin sprite($sprite,$scale:1) {
+  display: inline-block;
+  @include sprite-image($sprite);
+  @include sprite-position($sprite, $scale);
+  @include sprite-width($sprite, $scale);
+  @include sprite-height($sprite, $scale);
+  @include sprite-size($sprite, $scale);
+}
+
+@mixin line-clamp($line-height, $font-size, $lines, $color){
+  line-height: $line-height;
+  height: $font-size * $line-height * $lines + px;
+  overflow: hidden;
+  position: relative;
+  word-break: break-all;
+  text-align: justify;
+  &:before,
+  &:after {
+    position: absolute;
+  }
+  &:before {
+    content: '...';
+    background: $color;
+    right: 0;
+    text-align: center;
+    width: 1em;
+    top: $font-size * $line-height * ($lines - 1) + px;
+  }
+  &:after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: 0;
+    z-index: 2;
+    background: $color;
+  }
+}
+//Android hack for l-grid
+@mixin android-width($width) {
+  .android & {
+    width: $width - 0.00001%;
+  }
+}
+
+// Iphone and Ipad
+@mixin ipad-landscape {
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)  {
+    @content;
+  }
+}
+
+@mixin ipad {
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  {
+    @content;
+  }
+}
+
+@mixin button-hover-default {
+  transition: background $base-duration $base-animation,
+              opacity $base-duration $base-animation,
+              color $base-duration $base-animation;
+  background-image: linear-gradient(to right, #001a43, #001a43 50%, #fff 50%, #fff);
+  background-position: 0 0;
+  background-size: 200% 101%;
+
+  &:hover {
+    @include min-screen($breakpoint-mobile + 1) {
+      color: #001a43;
+      background-position: -100% 0;
+    }
+  }
+
+  @include ipad-landscape {
+    color: #fff;
+    background-position: 0 0;
+    background-color: #001a43;
+    background-image: none;
+  }
+
+  #{$edge},
+  #{$ie} {
+    border: none;
+    position: relative;
+    &:after {
+      content: "";
+      border: 2px solid #001a43;
+      border-radius: 20px;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+@mixin button-hover-reverse {
+  background-image: linear-gradient(to right, #fff, #fff 50%, #001a43 50%, #001a43);
+  color: #001a43;
+
+  &:hover {
+    @include min-screen($breakpoint-mobile + 1) {
+      color: #fff;
+    }
+    @include ipad-landscape {
+      color: #001a43;
+      background-color: #fff;
+      background-image: none;
+    }
+  }
+
+  #{$edge},
+  #{$ie} {
+    border: none;
+    position: relative;
+    &:after {
+      content: "";
+      border: 2px solid #001a43;
+      border-radius: 20px;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+@mixin border-hover-scale {
+  &:before {
+    content: "";
+    border-bottom: 2px solid #001a43;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform $base-duration $base-animation;
+  }
+  &:hover {
+    @include min-screen($breakpoint-mobile + 1) {
+      &:before {
+        transform-origin: left;
+        transform: scaleX(1);
+      }
+    }
+  }
+}

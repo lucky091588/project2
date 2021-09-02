@@ -1,0 +1,61 @@
+.button {
+  font-size: 16px;
+  color: #fff;
+  min-width: 220px;
+  letter-spacing: 0.15em;
+  border: 2px solid #001a43;
+  display: inline-block;
+  text-align: center;
+  border-radius: 20px;
+  padding: 9px 10px 3px 15px;
+  cursor: pointer;
+  @include button-hover-default;
+  @include  max-screen($breakpoint-mobile) {
+    font-size: 14px;
+    padding: 8px 10px 3px 15px;
+    min-width: 250px;
+    max-width: 390px;
+    width: calc(100vw - 40px);
+  }
+  &[disabled="disabled"] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  &:focus {
+    appearance: none;
+    outline: none;
+  }
+
+  #{$windows} {
+    padding: 7px 10px 5px 15px;
+  }
+
+  #{$windows-firefox} {
+    padding: 6px 10px 6px 15px;
+  }
+}
+.button--thank-you,
+.button--submit {
+  @include  max-screen($breakpoint-mobile) {
+    min-width: auto;
+    width: 100%;
+  }
+}
+.button--confirm {
+  margin-right: 46px;
+  @include button-hover-reverse;
+  @include  max-screen($breakpoint-mobile) {
+    border-width: 1px;
+    margin: 20px auto 0;
+    padding: 9px 10px 3px 9px;
+  }
+}
+.button--confirm-sp-hidden {
+  @include  max-screen($breakpoint-mobile) {
+    display: none;
+  }
+}
+.button--404 {
+  position: relative;
+  z-index: $z-max;
+}

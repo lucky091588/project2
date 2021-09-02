@@ -1,0 +1,151 @@
+//How to use http://codepen.io/seito2014/pen/VjpERZ
+//"android-width()" is the hack for Android OS under v4.4.2
+.l-grid {
+    text-align: left;
+    .l-grid-inner {
+        font-size: 0;
+        letter-spacing: 0;
+    }
+    .l-grid-item {
+        display: inline-block;
+        vertical-align: top;
+        font-size: $base-font-size;
+    }
+    //Modifier column
+    &.l-grid-col2 {
+        .l-grid-item {
+            width: 50%;
+            @include android-width(50%);
+        }
+    }
+    &.l-grid-col3 {
+        .l-grid-item {
+            width: 33.3333%;
+        }
+    }
+    &.l-grid-col4 {
+        .l-grid-item {
+            width: 25%;
+            @include android-width(25%);
+        }
+    }
+    &.l-grid-col5 {
+        .l-grid-item {
+            width: 20%;
+            @include android-width(20%);
+        }
+    }
+    &.l-grid-col6 {
+        .l-grid-item {
+            width: 16.6666%;
+        }
+    }
+    /* Break point large */
+    @media all and (max-width: $breakpoint-large) {
+        &.l-grid-lg-col1 {
+            .l-grid-item {
+                width: 100%;
+            }
+        }
+        &.l-grid-lg-col2 {
+            .l-grid-item {
+                width: 50%;
+                @include android-width(50%);
+            }
+        }
+        &.l-grid-lg-col3 {
+            .l-grid-item {
+                width: 33.3333%;
+            }
+        }
+        &.l-grid-lg-col4 {
+            .l-grid-item {
+                width: 25%;
+                @include android-width(25%);
+            }
+        }
+        &.l-grid-lg-col5 {
+            .l-grid-item {
+                width: 20%;
+                @include android-width(20%);
+            }
+        }
+        &.l-grid-lg-col6 {
+            .l-grid-item {
+                width: 16.6666%;
+            }
+        }
+    }
+    /* Break point medium */
+    @media all and (max-width: $breakpoint-tablet) {
+        &.l-grid-md-col1 {
+            .l-grid-item {
+                width: 100%;
+            }
+        }
+        &.l-grid-md-col2 {
+            .l-grid-item {
+                width: 50%;
+                @include android-width(50%);
+            }
+        }
+        &.l-grid-md-col3 {
+            .l-grid-item {
+                width: 33.3333%;
+            }
+        }
+        &.l-grid-md-col4 {
+            .l-grid-item {
+                width: 25%;
+                @include android-width(25%);
+            }
+        }
+        &.l-grid-md-col5 {
+            .l-grid-item {
+                width: 20%;
+                @include android-width(20%);
+            }
+        }
+        &.l-grid-md-col6 {
+            .l-grid-item {
+                width: 16.6666%;
+            }
+        }
+    }
+    /* Break point small */
+    @media all and (max-width: $breakpoint-mobile) {
+        &.l-grid-sm-col1 {
+            .l-grid-item {
+                width: 100%;
+            }
+        }
+        &.l-grid-sm-col2 {
+            .l-grid-item {
+                width: 50%;
+                @include android-width(50%);
+            }
+        }
+        &.l-grid-sm-col3 {
+            .l-grid-item {
+                width: 33.3333%;
+            }
+        }
+        &.l-grid-sm-col4 {
+            .l-grid-item {
+                width: 25%;
+                @include android-width(25%);
+            }
+        }
+        &.l-grid-sm-col5 {
+            .l-grid-item {
+                width: 20%;
+                @include android-width(20%);
+            }
+        }
+        &.l-grid-sm-col6 {
+            .l-grid-item {
+                width: 16.6666%;
+            }
+        }
+    }
+}

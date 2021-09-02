@@ -1,0 +1,184 @@
+.footer {
+  min-width: $site-wrapper-large + 60px;
+  @include  max-screen($breakpoint-mobile) {
+    min-width: 100%;
+  }
+
+  #{$windows} {
+    min-width: $site-wrapper-large;
+  }
+}
+.footer__menu {
+  background-color: #001a43;
+}
+.footer__menu-wrapper {
+  position: relative;
+  padding: 76px 0 67px;
+  @include  max-screen($breakpoint-mobile) {
+    padding: 23px 0;
+  }
+}
+.footer__menu-list {
+  list-style: none;
+  @include  max-screen($breakpoint-mobile) {
+    display: none;
+  }
+}
+.footer__menu-item {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: -4px;
+  padding: 0 24px;
+  line-height: calc(40 / 20);
+  font-size: 20px;
+  letter-spacing: 0.16em;
+  &:first-child {
+    margin-left: 0;
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+  }
+}
+.footer__menu-link {
+  color: #fff;
+  position: relative;
+  @include border-hover-scale;
+  &:before {
+    border-color: #fff;
+  }
+}
+.footer__to-top {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  background: url('../images/bg-to-top.jpg') no-repeat center / cover;
+  border-radius: 50%;
+  padding-top: 14px;
+  color: #001a43;
+  transition: padding $base-duration $base-animation;
+  @include  max-screen($breakpoint-mobile) {
+    right: 2px;
+    margin: auto;
+    left: 0;
+    background: none;
+    color: #ffffff;
+    font-size: 13px;
+  }
+  &:hover {
+    @include min-screen($breakpoint-mobile + 1) {
+      padding-top: 10px;
+    }
+  }
+
+  #{$windows} {
+    padding-top: 12px;
+    &:hover {
+      padding-top: 8px;
+    }
+  }
+}
+.footer__main {
+  background: url('../images/bg-footer.png') repeat left top;
+  padding: 48px 0;
+  height: 122px;
+  @include  max-screen($breakpoint-mobile) {
+    padding: 38px 0 23px;
+    height: auto;
+  }
+}
+.footer__main-social {
+  list-style: none;
+  float: left;
+  width: 50%;
+  @include  max-screen($breakpoint-mobile) {
+    list-style: none;
+    float: none;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 33px;
+  }
+}
+.footer__main-social-item {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 16px;
+  @include  max-screen($breakpoint-mobile) {
+    padding: 0 18px;
+  }
+  @include  max-screen($breakpoint-mobile-sm) {
+    padding: 0 8px;
+  }
+  &:first-child {
+    padding-left: 0;
+    padding-right: 31px;
+    @include  max-screen($breakpoint-mobile) {
+      padding-left: 15px;
+      padding-right: 21px;
+    }
+    @include  max-screen($breakpoint-mobile-sm) {
+      padding-left: 5px;
+    }
+  }
+}
+.footer__main-social-link {
+  font-size: 23px;
+  transition: opacity $base-duration $base-animation;
+  display: block;
+  &:hover {
+    @include min-screen($breakpoint-mobile + 1) {
+      opacity: 0.8;
+    }
+  }
+  span {
+    display: block;
+    width: 23px;
+    height: 23px;
+    position: relative;
+  }
+  i {
+    font-style: normal;
+    padding-left: 1px;
+    &:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 23px;
+    }
+  }
+}
+.footer__main-social-youtube {
+  .footer__main-social-link & {
+    width: 108px;
+    height: 25px;
+    background: url('../images/icon-youtube.svg') no-repeat center;
+  }
+}
+.footer__main-social-instagram {
+  background: url('../images/icon-instagram.svg') no-repeat center;
+}
+.footer__main-copyright {
+  float: left;
+  width: 50%;
+  text-align: right;
+  padding-top: 4px;
+  @include  max-screen($breakpoint-mobile) {
+    float: none;
+    width: 100%;
+    text-align: center;
+    padding-top: 0;
+    transform: scale(0.889);
+    margin-left: -1px;
+  }
+  @include  max-screen($breakpoint-mobile-sm) {
+    margin-left: -7px;
+  }
+}
+.footer__copyright {
+    height: 13px;
+    width: 300px;
+}

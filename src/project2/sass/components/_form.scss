@@ -1,0 +1,260 @@
+.form {
+  position: relative;
+  background: url('../images/bg-footer-contact.jpg') repeat left top;
+  padding: 64px 161px 71px 163px;
+  @include max-screen($breakpoint-mobile) {
+    padding: 35px 25px 39px;
+  }
+}
+.form__main-wrapper {
+  margin-bottom: 58px;
+  @include max-screen($breakpoint-mobile) {
+    margin-bottom: 30px;
+  }
+}
+.form__confirmation-message {
+  display: none;
+  font-weight: bold;
+  color: #001a43;
+  letter-spacing: 0.1em;
+  line-height: calc(28 / 14);
+  font-family: $font-hiragino-kaku;
+  margin-bottom: 43px;
+  @include max-screen($breakpoint-mobile) {
+    margin-bottom: 29px;
+    font-size: 10px;
+    max-width: 215px;
+    line-height: calc(16 / 10);
+    padding-top: 1px;
+  }
+  .form--confirm & {
+    display: block;
+  }
+}
+.form__group {
+  margin-bottom: 20px;
+  @include max-screen($breakpoint-mobile) {
+    margin-bottom: 12px;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .form--confirm & {
+    overflow: hidden;
+    @include max-screen($breakpoint-mobile) {
+     margin-bottom: 7px;
+    }
+  }
+}
+.form__label-wrapper {
+  color: #001a43;
+  letter-spacing: 0.1em;
+  line-height: calc(28 / 14);
+  font-family: $font-hiragino-kaku;
+  margin-bottom: 3px;
+  @include max-screen($breakpoint-mobile) {
+    line-height: calc(20 / 11);
+    font-size: 11px;
+  }
+  .form--confirm & {
+    width: 270px;
+    float: left;
+    @include max-screen($breakpoint-mobile) {
+      font-size: 10px;
+      width: 142px;
+    }
+  }
+}
+.form__field-wrapper {
+  position: relative;
+  color: #001a43;
+  letter-spacing: 0.1em;
+  line-height: calc(28 / 14);
+  font-family: $font-hiragino-kaku;
+  .form--confirm & {
+    width: calc(100% - 270px);
+    float: left;
+    @include max-screen($breakpoint-mobile) {
+      width: calc(100% - 142px);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      line-height: calc(16 / 10);
+      padding-top: 1px;
+    }
+  }
+}
+.form__input {
+  background-color: #fff;
+  width: 100%;
+  height: 45px;
+  font-family: $font-hiragino-kaku;
+  color: #001a43;
+  padding: 0 17px;
+  outline: none;
+  @include max-screen($breakpoint-mobile) {
+    height: 36px;
+    padding: 0 8px;
+    font-size: 16px;
+    letter-spacing: 0.11em;
+  }
+}
+.form__input--textarea {
+  height: 200px;
+  padding-top: 12px;
+  resize: none;
+  display: block;
+  @include max-screen($breakpoint-mobile) {
+    height: 110px;
+    padding-top: 8px;
+  }
+
+  @include ipad {
+    border: 1px solid red;
+    padding-left: 0;
+    text-indent: 8px;
+  }
+}
+.form__terms {
+  .form--confirm & {
+    display: none;
+  }
+}
+.form__terms-top {
+  margin-bottom: 58px;
+  @include max-screen($breakpoint-mobile) {
+    margin-bottom: 22px;
+  }
+}
+.form__terms-message {
+  height: 200px;
+  overflow-y: auto;
+  background-color: #fcfdfd;
+  padding: 16px 19px;
+  margin-bottom: 20px;
+  @include max-screen($breakpoint-mobile) {
+    height: 165px;
+    padding: 13px 15px;
+    margin-bottom: 10px;
+  }
+}
+.form__terms-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: calc(28 / 14);
+  font-family: $font-hiragino-kaku;
+  color: #001a43;
+  letter-spacing: 0.1em;
+  padding-left: 4px;
+  margin-bottom: 4px;
+  @include max-screen($breakpoint-mobile) {
+    font-size: 11px;
+  }
+}
+.form__terms-description {
+  line-height: calc(28 / 14);
+  font-family: $font-hiragino-kaku;
+  color: #001a43;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  @include max-screen($breakpoint-mobile) {
+    font-size: 10px;
+    margin-bottom: 10px;
+    line-height: calc(16 / 10);
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.form__agree-button {
+  text-align: center;
+}
+.form__agree-button-label {
+  line-height: calc(28 / 14);
+  font-family: $font-hiragino-kaku;
+  letter-spacing: 0.1em;
+  color: #001a43;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 36px;
+  @include max-screen($breakpoint-mobile) {
+    font-size: 9px;
+    padding-left: 18px;
+  }
+}
+$is-check: '&:checked ~ span:before';
+.form__radio {
+  #{$is-check} {
+    opacity: 1;
+  }
+}
+.form__check-marker {
+  border: 1px solid #001a43;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  @include max-screen($breakpoint-mobile) {
+    height: 13px;
+    width: 13px;
+    top: 2px;
+  }
+  &:before {
+    content: '';
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #001a43;
+    opacity: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    @include max-screen($breakpoint-mobile) {
+      height: 7px;
+      width: 7px;
+    }
+  }
+
+  #{$ie} {
+    top: 1px;
+  }
+}
+.form__confirm-buttons {
+  display: none;
+  text-align: center;
+  .form--confirm & {
+    display: block;
+  }
+}
+.form__radio {
+  display: none;
+}
+.form__submit {
+  text-align: center;
+}
+.form__thank-you-wrapper {
+  display: none;
+}
+.form__thank-you-title {
+  line-height: calc(40 / 20);
+  font-family: $font-hiragino-kaku;
+  color: #001a43;
+  letter-spacing: 0.1em;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -3px;
+  margin-bottom: 21px;
+  @include max-screen($breakpoint-mobile) {
+    line-height: calc(26 / 13);
+    font-size: 13px;
+    margin-top: 0;
+    margin-bottom: 7px;
+  }
+}

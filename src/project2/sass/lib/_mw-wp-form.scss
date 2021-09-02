@@ -1,0 +1,144 @@
+.mwform-radio-field {
+  position: relative;
+  margin-bottom: 17px;
+  margin-top: 0 !important;
+  top: 0;
+  @include max-screen($breakpoint-mobile) {
+    margin-bottom: 6px;
+  }
+  &:nth-last-child(2) {
+    margin-bottom: 0;
+  }
+  label {
+    display: block;
+    font-size: 16px;
+    color: #221815;
+    font-weight: 500;
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      position: absolute;
+      top: 0;
+      left: 1px;
+      border-radius: 50%;
+      border: 2px solid #2396d0;
+      @include max-screen($breakpoint-mobile) {
+        width: 16px;
+        height: 16px;
+        left: 0;
+        top: 5px;
+        border: 1px solid #2396d0;
+      }
+    }
+  }
+  @include max-screen($breakpoint-mobile) {
+    .form-main--contact & label {
+      vertical-align: middle;
+    }
+  }
+}
+.mwform-radio-field-text {
+  margin-left: 37px;
+  @include max-screen($breakpoint-mobile) {
+    font-size: 13px;
+    margin-left: 24px;
+  }
+  &:before {
+    content: "";
+    opacity: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #2396d0;
+    display: block;
+    position: absolute;
+    left: 7px;
+    top: 6px;
+    margin: auto;
+    border-radius: 50%;
+    @include max-screen($breakpoint-mobile) {
+      top: 9px;
+      left: 4px;
+      width: 8px;
+      height: 8px;
+    }
+  }
+}
+$radioError: '.error ~ .mwform-radio-field label:before';
+#{$radioError} {
+  border: 2px solid red;
+}
+$radioChecked: '.form__radio:checked + .mwform-radio-field-text:before';
+#{$radioChecked} {
+  opacity: 1;
+}
+.error {
+  + br {
+    display: none;
+  }
+}
+.mwform-file-delete {
+  display: none;
+}
+.mw_wp_form {
+  .form__hidden[type="file"] {
+    display: none;
+  }
+  .error {
+    color: transparent !important;
+    position: absolute;
+    right: -41px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 27px;
+    height: 27px;
+    @include max-screen($breakpoint-mobile) {
+      width: 13px;
+      height: 13px;
+      right: 5px;
+      top: 2px;
+    }
+    &:after {
+      content: "\e914";
+      font-size: 27px;
+      color: #de0d0d;
+      position: absolute;
+      top: 0;
+      right: 0;
+      @include max-screen($breakpoint-mobile) {
+        font-size: 13px;
+      }
+    }
+  }
+}
+.mw-wp-form_file {
+  word-wrap: break-word;
+  .form-main--confirm & a {
+    font-size: 15px;
+  }
+  @include max-screen($breakpoint-mobile) {
+    font-size: 12px;
+    .form-main--confirm & a {
+      font-size: 15px;
+    }
+  }
+}
+.form__field-message--red {
+  color: red;
+
+  .mw-wp-form_file + & {
+    display: none;
+  }
+}

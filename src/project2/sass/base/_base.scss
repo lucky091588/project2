@@ -1,0 +1,34 @@
+/*
+#styleguide
+基本スタイル
+
+```
+<p>特に何も指定しないときの状態</p>
+```
+*/
+html {
+  -webkit-text-size-adjust: 100%; // this will stop the font issue in landscape mode of iphone
+  &.is-ie {
+    overflow-x: hidden;
+  }
+}
+body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: $font-smoothing;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: $font-smoothing;
+  text-rendering: $text-rendering;
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  color: $base-font-color;
+  background-color: $base-background-color;
+}
+p {
+  &:empty {
+    display: none;
+  }
+}
+a {
+  outline: none;
+}
